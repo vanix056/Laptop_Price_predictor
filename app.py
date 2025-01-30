@@ -6,6 +6,7 @@ from streamlit.components.v1 import html
 # Custom CSS with enhanced animations and new background
 st.markdown("""
 <style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -140,6 +141,30 @@ h1 {
     margin-bottom: 30px !important;
 }
 
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.social-buttons a {
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+}
+
+.social-buttons a:hover {
+    background: linear-gradient(135deg, #7C4DFF 0%, #FF6B6B 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(124, 77, 255, 0.3);
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -153,7 +178,7 @@ def load_models():
 pipe, data_frame = load_models()
 
 # Page layout
-st.title('🚀 FutureTech Laptop Configurator')
+st.title('🚀 AI Powered Laptop Price Predictor')
 st.markdown("##### ✨ Design your perfect machine and see instant pricing magic!")
 
 # Split form into columns
@@ -217,13 +242,18 @@ if st.button('✨ PREDICT PRICE ✨', use_container_width=True):
         
         price_pkr = int(np.exp(pipe.predict(q)[0]))
         price_inr = int(price_pkr / 3.22)
+        price_usd = int(price_pkr / 278.60)  
         
         # Animated result display
         st.markdown(f"""
         <div class="price-result">
             <div style="text-align: center; position: relative; z-index: 2;">
                 <h2 style="margin:0 0 20px 0;">💎 Estimated Price Revelation 💎</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;">
+                    <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px;">
+                        <div style="font-size: 1.5em;">🇺🇸 USD</div>
+                        <div style="font-size: 2.5em; font-weight: 800;">${price_usd:,}</div>
+                    </div>
                     <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px;">
                         <div style="font-size: 1.5em;">🇵🇰 PKR</div>
                         <div style="font-size: 2.5em; font-weight: 800;">{price_pkr:,}</div>
@@ -237,7 +267,7 @@ if st.button('✨ PREDICT PRICE ✨', use_container_width=True):
         </div>
         """, unsafe_allow_html=True)
 
-# Floating Particles Effect (Optional)
+# Floating Particles Effect
 html('''
 <div id="particles"></div>
 <script>
@@ -285,10 +315,18 @@ setTimeout(() => {
 </style>
 ''')
 
-# Footer
+# Footer with Social Buttons
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; padding: 20px; color: #888;">
-    🔮 Powered by Streamlit | 🌐 Made by Vanix056
+    <div>🔮 Powered by Streamlit | 🌐 Made by vanix056</div>
+    <div class="social-buttons">
+        <a href="https://www.linkedin.com/in/abdullahwaqar/" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/vanix056" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+    </div>
 </div>
 """, unsafe_allow_html=True)
