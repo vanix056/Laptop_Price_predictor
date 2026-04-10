@@ -1,4 +1,4 @@
-# 💻 Laptop Price Predictor
+#  Laptop Price Predictor
 
 ## Overview
 
@@ -36,7 +36,7 @@ Laptop Price Predictor is an end-to-end machine learning application that estima
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/vanix056/Laptop_Price_predictor.git
+git clone https://github.com/MAbdullahWaqar/Laptop_Price_predictor.git
 cd Laptop_Price_predictor
 
 # 2. (Optional) Create and activate a virtual environment
@@ -171,7 +171,7 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 ## Author
 
-**Abdullah Waqar** ([@vanix056](https://github.com/vanix056))
+**Muhammad Abdullah Waqar** ([@MAbdullahWaqar](https://github.com/MAbdullahWaqar))
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/abdullahwaqar/)
-[![GitHub](https://img.shields.io/badge/GitHub-vanix056-black?style=flat&logo=github)](https://github.com/vanix056)
+[![GitHub](https://img.shields.io/badge/GitHub-MAbdullahWaqar-black?style=flat&logo=github)](https://github.com/MAbdullahWaqar)
